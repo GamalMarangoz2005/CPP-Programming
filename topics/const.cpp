@@ -137,11 +137,11 @@ int main()
 
     std::cout << "\nBoth of these pointers cannot be pointing to another addresses\n"
               << "but, we can change the contents of what that pointer is pointing to\n\n"
-              << "int* const g1 = new int;\n"
+              << "int* const g1 = new int; | this is a valid syntax !\n"
               << "const* int g2 = new int; | this is invalid syntax !\n"
-              << "\n*g2 = 4;\n"
-              << " g2 = (int*)&MAX_AGE;\n"
-              << " g2 = nullptr;\n" << std::endl;
+              << "\n*g1 = 2;                 | allowed to change the data to 2\n"
+              << " g1 = (int*)&MAX_AGE;    | not allowed to change the reference\n"
+              << " g1 = nullptr;           | not allowed to change the reference\n" << std::endl;
     std::cout << "Output\n" << *g1 << "\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
@@ -164,7 +164,7 @@ int main()
                 << "even changing the address itself that it is pointing to which means we cannot\n"
                 << "change the address that it is pointing to once, it is declared once !\n\n"
                 << "const int* const h = new int;\n"
-                << "*h = 2;\n" << " h = (int*)&MAX_AGE\n"  << " h = nullptr;\n" << std::endl;
+                << "*h = 2;                | not allowed to change the data\n" << " h = (int*)&MAX_AGE    | not allowed to change the reference\n"  << " h = nullptr;          | not allowed to change the reference\n" << std::endl;
 
     std::cout << "Output\n" << *h << "\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
