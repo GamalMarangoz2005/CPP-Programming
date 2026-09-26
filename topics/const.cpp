@@ -6,7 +6,7 @@ int main()
     // we are free to change this integer value
     int a = 5;
     a = 2;
-    std::cout << "we are free to change this integer value\nint a = 5;\na = 2;\n" << std::endl;
+    std::cout << "\nWe are free to change this integer value\nint a = 5;\na = 2;\n" << std::endl;
 
 
     // if we have another variable that is constant like this
@@ -14,8 +14,8 @@ int main()
 
     // changing here is not allowed because it is a constant value.
     //b = 2; 
-    std::cout << "if we have another variable that is constant like this\nconst int b = 5;\n\n" 
-              << "changing here is not allowed because it is a constant value.\nb = 2;\n" << std::endl;
+    std::cout << "If we have another variable that is constant like this\nconst int b = 5;\n\n" 
+              << "Changing here is not allowed because it is a constant value.\nb = 2;\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
     // -------------------------------------------------------------------------------------------------------------------------
@@ -27,20 +27,19 @@ int main()
     int* c = new int;
     *c = 2;
     
-    std::cout   << "\ncreating a pointer in the heap\n"
+    std::cout   << "\nCreating a pointer in the heap\n"
     << "int* c = new int;\n"
     << "*c = 2;\n" << std::endl;
 
-    std::cout << *c << std::endl;
+    std::cout << "Output\n" << *c << "\n" << std::endl;
 
     // also we can dereference our pointer to the MAX_AGE variable that we had created.
     const int MAX_AGE = 90;
     c =(int*)&MAX_AGE;
 
-    std::cout << "also we can dereference our pointer\nto the MAX_AGE variable that we had"
-              << " created\n"
-              << "const int MAX_AGE = 90;\n c = (int*)&MAX_AGE;\n" << std::endl;
-    std::cout << *c << std::endl;
+    std::cout << "Also we can dereference our pointer to the \nMAX_AGE variable that we had created\n\n"
+              << "const int MAX_AGE = 90;\nc = (int*)&MAX_AGE;\n" << std::endl;
+    std::cout << "Output\n" << *c << "\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
 
@@ -48,6 +47,7 @@ int main()
 
 
 
+    
 
     // creating a constant pointer
     const int* d = new int;
@@ -60,13 +60,12 @@ int main()
     // that's not a problem.
     d = (int*)&MAX_AGE;
 
-    std::cout << "creating a constant pointer\n"
+    std::cout << "\nCreating a constant pointer\n"
               << "const int* d = new int;\n"
-              << "*d = 2; | not allowed !\n"
-              << "d = (int*)&MAX_AGE;\n  | we can change the pointer to point to something else\n"
-              << "but, we cannot change the contents of the data at this memory address by dereferencing !\n"
+              << "*d = 2;                 | not allowed to change the data at the address!\n"
+              << " d = (int*)&MAX_AGE;    | allowed to change the memory address referring to\n"
               << std::endl;
-    std::cout << *d << std::endl;
+    std::cout << "Output\n" << *d << "\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
 
@@ -80,12 +79,12 @@ int main()
     *e = 2;
     //e = (int*)&MAX_AGE;
 
-    std::cout << "we cannot re-assign the actual pointer to point to something else\n"
+    std::cout << "\nWe cannot re-assign the actual pointer to point to something else\n"
               << "but, we can change the contents of the pointer or the data in the address\n"
-              << "that this pointer is pointing to\n"
-              << "int* const e = new int;\n*e = 2; | allowed !\n"
-              << "e = (int*)&MAX_AGE; | not allowed !\n" << std::endl;
-    std::cout << *e << std::endl;
+              << "that this pointer is pointing to\n\n"
+              << "int* const e = new int;\n*e = 2;                    | allowed !\n"
+              << " e = (int*)&MAX_AGE;       | not allowed !\n" << std::endl;
+    std::cout << "Output\n" << *e << "\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
 
@@ -99,9 +98,9 @@ int main()
     int const* f1 = new int;
     const int* f2 = new int;
 
-    std::cout << "both of those pointers cannot dereferenced and alter the data in the addresses they are pointing to\n"
+    std::cout << "\nBoth of those pointers cannot dereferenced and alter the data in the addresses they are pointing to\n"
               << "but, we can change the address that they are pointing to so, they could be referring to another addresses\n"
-              << "\nint const* f1  = new int;\n" << "const int* f2 = new int;" << std::endl;
+              << "\nint const* f1  = new int;\n" << "const int* f2 = new int;\n" << std::endl;
 
     // we can change what the pointer is pointing to
     // but, we cannot change the contents of what that 
@@ -110,9 +109,9 @@ int main()
     f1 = nullptr; // this is feasible
     f1 = (int*)&MAX_AGE; // this is also feasible.
 
-    std::cout << "*f1 = 2; | can't change the contents of that pointer.\n"
-              << "f1 = nullptr; | this is feasible !\n"
-              << "f1 = (int*)&MAX_AGE; | this is feasible !\n" << std::endl;
+    std::cout << "*f1 = 2;                  | can't change the contents of that pointer.\n"
+              << " f1 = nullptr;            | this is feasible !\n"
+              << " f1 = (int*)&MAX_AGE;     | this is feasible !\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
 
@@ -136,14 +135,14 @@ int main()
     //  g2 = (int*)&MAX_AGE;
     //  g2 = nullptr;
 
-    std::cout << "both of these pointers cannot be pointing to another addresses\n"
+    std::cout << "\nBoth of these pointers cannot be pointing to another addresses\n"
               << "but, we can change the contents of what that pointer is pointing to\n\n"
               << "int* const g1 = new int;\n"
               << "const* int g2 = new int; | this is invalid syntax !\n"
               << "\n*g2 = 4;\n"
-              << "g2 = (int*)&MAX_AGE;\n"
-              << "g2 = nullptr;\n";
-    std::cout << *g1 << std::endl;
+              << " g2 = (int*)&MAX_AGE;\n"
+              << " g2 = nullptr;\n" << std::endl;
+    std::cout << "Output\n" << *g1 << "\n" << std::endl;
     std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
     // -------------------------------------------------------------------------------------------------------------------------
@@ -160,17 +159,23 @@ int main()
     //  h = (int*)&MAX_AGE;
     //  h = nullptr;
     
-    std::cout   << "this pointer specifically is constant in both\n"
+    std::cout   << "\nThis pointer specifically is constant in both\n"
                 << "dereferencing it to change the data in the address that it is pointing to\n"
                 << "even changing the address itself that it is pointing to which means we cannot\n"
                 << "change the address that it is pointing to once, it is declared once !\n\n"
                 << "const int* const h = new int;\n"
-                << "*h = 2;\n" << " h = (int*)&MAX_AGE\n"  << " h = nullptr;\n";
+                << "*h = 2;\n" << " h = (int*)&MAX_AGE\n"  << " h = nullptr;\n" << std::endl;
 
-    std::cout << *h << std::endl;
-std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "Output\n" << *h << "\n" << std::endl;
+    std::cout << "-------------------------------------------------------------------------------------------------------------------------" << std::endl;
 
     // -------------------------------------------------------------------------------------------------------------------------
 
+    std::cout << "System Prompt: ";
     std::cin.get();
+
+    // -------------------------------------------------------------------------------------------------------------------------
+
+
+    return 0;
 }
