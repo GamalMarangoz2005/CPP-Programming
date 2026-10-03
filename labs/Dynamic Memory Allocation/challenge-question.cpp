@@ -50,4 +50,6 @@ int main()
     ptr was overwritten with new int(200); which means the address of 100 was lost without calling delete
     on it first. That memory block containing 100 remains allocated until the program closes. 
      */
+
+     // How to fix this problem
 }
