@@ -7,18 +7,37 @@ int main()
     int* singlePointer = &a;
     int** doublePointer = &singlePointer;
 
-    cout << "The Address of A is " << &a << '\n';
+    cout << "\n--- The Memory Addresses of Variables and Pointers ---\n";
+
+    cout << "The Address of A             " << &a << '\n';
     cout << "The Address of singlePointer " << &singlePointer << '\n';
     cout << "The Address of doublePointer " << &doublePointer << '\n';
 
+    cout << '\n';
+
+    cout << "--- The Values of Variables and Pointers ---\n";
     cout << "The Value of A is " << a << '\n';
     cout << "The Value of singlePointer is " << singlePointer << '\n';
     cout << "The Value of doublePointer is " << doublePointer << '\n';
 
+    cout << '\n';
+
+    cout << "--- The Values of Pointers Dereferencing ---\n";
     cout << "The Dereference of singlePointer value is " << *singlePointer << '\n';
     cout << "The Single Dereference of doublePointer value is " << *doublePointer << '\n';
     cout << "The Double Dereference of doublePointer value is " << **doublePointer << '\n';
 
+    cout << '\n';
+
+    cout << "\nInsights\n\n";
+    cout << "- Each of the variables and pointers has an independent memory address\n";    
+    cout << "\n- The value of a single pointer is the memory address of the variable that the pointer is pointing to.\n";
+    cout << "\n- The value of a double pointer is the memory address of the pointer that the pointer is pointing to.\n";
+    cout << "\n- The dereferencing of a single pointer is the value of the variable that this pointer is pointing to.\n";
+    cout << "\n- The single dereferencing of a double pointer is the value of the single pointer that this double pointer is pointing to which means memory address of the variable that the single pointer is pointing to.\n";
+    cout << "\n- The double dereferencing of a double pointer is the value of the variable that the single pointer that was pointed by this double pointer.\n";
+    
+    
     /*
     The Outcomes from this Experiments are the following
     1. Variables, Single pointers and double pointers each of them has an independent memory address.
